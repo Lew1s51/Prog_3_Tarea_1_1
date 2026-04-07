@@ -13,7 +13,7 @@ Tensor::Tensor(const std :: vector<size_t>& shape ,const std :: vector<double >&
             total_size *= dim;
         }
         if (values.size() != total_size) {
-            throw std::invalid_argument("ERROR: el número de valores no coincide con el tamaño total del tensor.");
+            throw std::invalid_argument("ERROR: el número de valores no coincide con el tamaño total del tensor");
         }
         data = new double[total_size];
         for (size_t i = 0; i < total_size; ++i) {
@@ -112,7 +112,7 @@ Tensor Tensor::random(const vector<size_t>& shape, double min_val, double max_va
 }
 Tensor Tensor::arange(double start, double end) {
     if (end <= start) {
-        throw invalid_argument("El valor de 'end' debe ser mayor que 'start'.");
+        throw invalid_argument("El valor de 'end' debe ser mayor que 'start'");
     }
     size_t total_size = static_cast<size_t>(end - start);
     vector<double> values(total_size);
@@ -170,7 +170,7 @@ Tensor Tensor::operator+(const Tensor& other) const {
 }
 Tensor Tensor::operator-(const Tensor& other) const {
     if (!broadcastable(shape, other.shape)) {
-        throw invalid_argument("Shapes no compatibles para broadcasting.");
+        throw invalid_argument("Shapes no compatibles para broadcasting");
     }
 
     vector<size_t> result_shape = shape;
@@ -216,7 +216,7 @@ Tensor Tensor::operator-(const Tensor& other) const {
 }
 Tensor Tensor::operator*(const Tensor& other) const {
     if (!broadcastable(shape, other.shape)) {
-        throw invalid_argument("Shapes no compatibles para broadcasting.");
+        throw invalid_argument("Shapes no compatibles para broadcasting");
     }
     vector<size_t> result_shape = shape;
     for (size_t i = 0; i < shape.size(); ++i) {
@@ -379,7 +379,7 @@ Tensor matmul(const Tensor& a, const Tensor& b) {
         throw std::invalid_argument("Ambos tensores deben ser bidimensionales");
     }
     if (a.shape[1] != b.shape[0]) {
-        throw std::invalid_argument("Nro de columnas 1er tensor debe ser = nro filas 2do tensor.");
+        throw std::invalid_argument("Nro de columnas 1er tensor debe ser = nro filas 2do tensor");
     }
     size_t m = a.shape[0];
     size_t n = a.shape[1];
