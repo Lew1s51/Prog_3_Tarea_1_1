@@ -1,7 +1,11 @@
 # Prog_3_Tarea_1_1
 Desarrollo de una librería de tensores en C++ estilo Numpy
+
+
+## Archivos incluidos
 ...
-ARchivos:/
+
+DOCS:/
 ├──CMakeLists.txt    # Configuración de CMake
 ├──tarea_header.h    # Declaración clase Tensor y sobrecargas
 ├──tensor.cpp        # Implementación de la lógica de todos los métodos
