@@ -53,9 +53,9 @@ void prueba_random() {
 
 int main(){
 //Ejecutar LA PREUBA 
-    //prueba1();
-    prueba_zero();
-    prueba_ones();
-    prueba_random();
+    prueba1();
+    //prueba_zero();
+    //prueba_ones();
+    //prueba_random();
     return 0;
 }
